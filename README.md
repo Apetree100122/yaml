@@ -1,58 +1,64 @@
 # YAML support for the Go language
-
 Introduction
-------------
-
-The yaml package enables Go programs to comfortably encode and decode YAML
-values. It was developed within [Canonical](https://www.canonical.com) as
-part of the [juju](https://juju.ubuntu.com) project, and is based on a
-pure Go port of the well-known [libyaml](http://pyyaml.org/wiki/LibYAML)
-C library to parse and generate YAML data quickly and reliably.
-
+-----------The
+yaml package enables Go programs to comfortably encode and decode YAML
+values. 
+It was developed within 
+[Canonical](https://www.canonical.com) as
+part of the
+[juju](https://juju.ubuntu.com) project, and is based on a
+pure Go port of the well-known
+[libyaml](http://pyyaml.org/wiki/LibYAML)
+library to parse and generate
+YAML data quickly and reliably.
 Compatibility
--------------
-
-The yaml package supports most of YAML 1.2, but preserves some behavior
+-------------The yaml package supports most of 
+YAML 1.2, but preserves some behavior
 from 1.1 for backwards compatibility.
-
-Specifically, as of v3 of the yaml package:
-
+Specifically,
+v3 of the yaml package:
  - YAML 1.1 bools (_yes/no, on/off_) are supported as long as they are being
    decoded into a typed bool value. Otherwise they behave as a string. Booleans
    in YAML 1.2 are _true/false_ only.
- - Octals encode and decode as _0777_ per YAML 1.1, rather than _0o777_
-   as specified in YAML 1.2, because most parsers still use the old format.
-   Octals in the  _0o777_ format are supported though, so new files work.
- - Does not support base-60 floats. These are gone from YAML 1.2, and were
+ - Octals encode 
+ - and decode as _0777_
+ - per YAML 1.1, rather than
+ - _0o777_
+   as specified in YAML
+   1.2, because most parsers still use
+   the old format.
+   Octals in the  _0o777_ format are supported
+    though, so new files work.
+ - Does not support base-60 floats. These are
+ - gone from YAML 1.2, and were
    actually never supported by this package as it's clearly a poor choice.
-
 and offers backwards
 compatibility with YAML 1.1 in some cases.
-1.2, including support for
+1.2, including
+    support for
 anchors, tags, map merging, etc. Multi-document unmarshalling is not yet
-implemented, and base-60 floats from YAML 1.1 are purposefully not
-supported since they're a poor design and are gone in YAML 1.2.
+implemented,
+and base-60 floats from YAML 1.1 are purposefully not
+supported since they
+are a poor design and are gone in YAML 1.2.
 
 Installation and usage
-----------------------
-
-The import path for the package is *gopkg.in/yaml.v3*.
-
+----------------------The import path for the package 
+is *gopkg.in/yaml.v3*.
 To install it, run:
-
-    go get gopkg.in/yaml.v3
+same as path for 
+package
 
 API documentation
------------------
-
-If opened in a browser, the import path itself leads to the API documentation:
-
+----------------If opened in a browser, the import
+path itself leads to the
+API documentation:
   - [https://gopkg.in/yaml.v3](https://gopkg.in/yaml.v3)
 
 API stability
--------------
-
-The package API for yaml v3 will remain stable as described in [gopkg.in](https://gopkg.in).
+-------------The package API for yaml v3
+will remain stable 
+as described in [gopkg.in](https://gopkg.in).
 
 
 License
